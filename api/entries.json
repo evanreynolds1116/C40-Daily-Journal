@@ -1,0 +1,25 @@
+{
+  "entries" : [
+    {
+      "id": 1,
+      "date": "04/15/2020",
+      "concepts": "Group Celebrity Tribute",
+      "entry": "Presented group projects",
+      "mood": "Happy" 
+    },
+    {
+      "id": 2,
+      "date": "04/16/2020",
+      "concepts": "JavaScript",
+      "entry": "Basic JavaScript",
+      "mood": "Happy"
+    },
+    {
+      "id": 3,
+      "date": "04/17/2020",
+      "concepts": "JavaScript",
+      "entry": "BRAIN FRIED",
+      "mood": "Blegh"
+    }
+  ]
+}
