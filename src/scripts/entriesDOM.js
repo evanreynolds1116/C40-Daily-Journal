@@ -1,4 +1,5 @@
 // Responsible for modifying the DOM into this file.
+import component from "./entryComponent.js";
 
 const render = {
   renderJournalEntries (entries) {
@@ -8,3 +9,5 @@ const render = {
     }
   }
 }
+
+export default render
