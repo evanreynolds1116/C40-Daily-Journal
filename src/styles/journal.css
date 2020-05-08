@@ -1,4 +1,88 @@
+body {
+  background-color: rgba(45, 48, 63);
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
+    background-color: rgb(167, 167, 167);
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 50%;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 4.5em;
+  letter-spacing: -1px;
+  color: white;
+  padding-top: 10px;
+  padding-left: 5px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  }
+
+h1:hover {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 4.5em;
+  letter-spacing: -1px;
+  background-color: yellow;
+  color: black;
+}
+
+.filter {
+  margin-top: 10px;
+  height:50%;
+  width: 35%;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Record Journal Entry Button */
+#submit {
+  margin-left: 3px;
+  margin-top: 4px;
+  border: 1px solid white;
+  background-color: black;
+  color: yellow;
+}
+
+/* Delete Entry Button */
+.deleteEntry {
+  background-color: red;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: white;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: white;
+  font-size: 2.5em;
+  text-shadow: -1px 0 rgb(241, 90, 35), 0 1px rgb(241, 90, 35), 1px 0 rgb(241, 90, 35), 0 -1px rgb(241, 90, 35);
+  letter-spacing: 0.09em;
+}
+
+.entries {
+  border: 1px solid rgb(241, 90, 35);
+  border-color: rgb(241, 90, 35);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.entries > p {
+  color: rgb(241, 90, 35);
+  font-size: 1.3em;
+}
+
+.entries > h2, .entries > p {
+  margin-left: 5px;
+}
+
+img {
+  float: right;
+  margin-right: 50px;
 }

@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/journal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
     <h1>Daily Journal</h1>
+  </header>
     <form action="">
+      <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3139/s300/nss-logo-compact.png" alt="NSS">
         <fieldset>
             <label for="journalDate">Date of entry</label>
             <input type="date" name="journalDate" id="journalDate">
@@ -31,7 +35,7 @@
             </select>
         </fieldset>
         <input type="submit" id="submit" value="Record journal entry">
-        <fieldset>
+        <fieldset class="filter">
           <p>Filter Journal Entries by Mood</p>
 
           <div>

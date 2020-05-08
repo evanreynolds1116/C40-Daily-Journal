@@ -3,11 +3,12 @@
 const component = {
   createJournalEntry (entries) {
     return `
-        <div>
-          <h1>${entries.concepts}</h1>
+        <div class="entries">
+          <h2>${entries.concepts}</h2>
           <p>${entries.entry}</p>
           <p>${entries.date}</p>
           <p>Mood: ${entries.mood}</p>
+          <button id="deleteEntry--${entries.id}" class="deleteEntry">Delete Entry</button>
         </div>
     `
   }

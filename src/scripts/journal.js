@@ -2,7 +2,7 @@ import API from "./data.js";
 import render from "./entriesDOM.js";
 import newJournalEntry from "./createEntry.js"
 
-API.getJournalEntries().then(render.renderJournalEntries)
+// API.getJournalEntries().then(render.renderJournalEntries)
 
 document.querySelector("#submit").addEventListener("click", (event) => {
   event.preventDefault()
@@ -40,5 +40,20 @@ radioButton.forEach(button => {
   })
 })
 
-  
-  
+const entryLog = document.querySelector(".entryLog")
+
+const deleteEntry = {
+  registerDeleteListener () {
+    entryLog.addEventListener("click", event => {
+      if (event.target.id.startsWith("deleteEntry--")) {
+        const entryToDelete = event.target.id.split("--")[1]
+        API.deleteJournalEntry(entryToDelete)
+          .then(API.getJournalEntries)
+          .then(render.renderJournalEntries)
+      }
+    })
+  }
+}
+
+deleteEntry.registerDeleteListener()
+API.getJournalEntries().then(render.renderJournalEntries)
