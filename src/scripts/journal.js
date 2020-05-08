@@ -21,13 +21,24 @@ document.querySelector("#submit").addEventListener("click", (event) => {
       let createNewJournalEntry = newJournalEntry(dateInput, conceptsInput, entryInput, moodInput)
       API.saveJournalEntry(createNewJournalEntry)
       .then( (newEntry) => {
-        console.log(newEntry)
         return API.getJournalEntries()
       })
       .then(render.renderJournalEntries);
     }
   });
   
+const radioButton = document.getElementsByName("radio-button")
+radioButton.forEach(button => {
+  button.addEventListener("click", event => {
+    const mood = event.target.value
+    console.log(mood)
+    API.getJournalEntries()
+    .then(response => {
+      const filteredResults = response.filter(entry => entry.mood == mood)
+      render.renderJournalEntries(filteredResults.reverse())
+    })
+  })
+})
 
   
   

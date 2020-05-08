@@ -22,24 +22,24 @@
       "mood": "Blegh"
     },
     {
-      "date": "2020-05-06",
-      "concepts": "TEST",
-      "entry": "TEST",
-      "mood": "happy",
+      "date": "2020-05-08",
+      "concepts": "Sad Test",
+      "entry": "Sad Test",
+      "mood": "sad",
       "id": 4
     },
     {
-      "date": "2020-05-06",
-      "concepts": "TEST2",
-      "entry": "TEST2",
-      "mood": "happy",
+      "date": "2020-05-08",
+      "concepts": "Yeet Test",
+      "entry": "Yeet Test",
+      "mood": "yeet",
       "id": 5
     },
     {
-      "date": "2020-05-06",
-      "concepts": "TEST3",
-      "entry": "TEST3",
-      "mood": "happy",
+      "date": "2020-05-08",
+      "concepts": "Mush Brain Test",
+      "entry": "Mush Brain Test",
+      "mood": "mush",
       "id": 6
     }
   ]
