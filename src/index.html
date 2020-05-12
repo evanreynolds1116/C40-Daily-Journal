@@ -9,10 +9,10 @@
 </head>
 <body>
   <header>
+    <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3139/s300/nss-logo-compact.png" alt="NSS">
     <h1>Daily Journal</h1>
   </header>
     <form action="">
-      <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3139/s300/nss-logo-compact.png" alt="NSS">
         <fieldset>
             <label for="journalDate">Date of entry</label>
             <input type="date" name="journalDate" id="journalDate">
@@ -34,7 +34,8 @@
               <option value="mush">Mush Brain</option>
             </select>
         </fieldset>
-        <input type="submit" id="submit" value="Record journal entry">
+        <input type="hidden" id="entryId" value="" />
+        <input type="submit" id="submit" value="Record journal entry" />
         <fieldset class="filter">
           <p>Filter Journal Entries by Mood</p>
 

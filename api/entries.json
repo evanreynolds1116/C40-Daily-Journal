@@ -1,15 +1,15 @@
 {
   "entries": [
     {
-      "id": 2,
-      "date": "04/16/2020",
-      "concepts": "JavaScript",
-      "entry": "Basic JavaScript",
-      "mood": "Happy"
+      "date": "2020-05-12",
+      "concepts": "Happy Test",
+      "entry": "Happy Test",
+      "mood": "happy",
+      "id": 2
     },
     {
       "date": "2020-05-08",
-      "concepts": "Sad Test",
+      "concepts": "Sad Test EDIT TEST",
       "entry": "Sad Test",
       "mood": "sad",
       "id": 4
@@ -22,9 +22,9 @@
       "id": 5
     },
     {
-      "date": "2020-05-08",
-      "concepts": "Mush Brain Test",
-      "entry": "Mush Brain Test",
+      "date": "2020-05-12",
+      "concepts": "Mush Test",
+      "entry": "Mush Test",
       "mood": "mush",
       "id": 6
     }

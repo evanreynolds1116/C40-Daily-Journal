@@ -8,6 +8,7 @@ const component = {
           <p>${entries.entry}</p>
           <p>${entries.date}</p>
           <p>Mood: ${entries.mood}</p>
+          <button id="editEntry--${entries.id}">Edity Entry</button>
           <button id="deleteEntry--${entries.id}" class="deleteEntry">Delete Entry</button>
         </div>
     `

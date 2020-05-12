@@ -2,11 +2,13 @@ import API from "./data.js";
 import render from "./entriesDOM.js";
 import newJournalEntry from "./createEntry.js"
 
-// API.getJournalEntries().then(render.renderJournalEntries)
-
 document.querySelector("#submit").addEventListener("click", (event) => {
   event.preventDefault()
-  if (
+
+  const hiddenEntryId = document.querySelector("#entryId").value
+  if (hiddenEntryId !== "") {
+    editEntry(hiddenEntryId)
+  } else if (
     document.querySelector("#journalDate").value === "" || 
     document.querySelector("#conceptsCovered").value === "" || 
     document.querySelector("#journalEntry").value === "" ||
@@ -26,7 +28,8 @@ document.querySelector("#submit").addEventListener("click", (event) => {
       .then(render.renderJournalEntries);
     }
   });
-  
+ 
+// Adds event listener to Delete Entry button
 const radioButton = document.getElementsByName("radio-button")
 radioButton.forEach(button => {
   button.addEventListener("click", event => {
@@ -40,8 +43,8 @@ radioButton.forEach(button => {
   })
 })
 
-const entryLog = document.querySelector(".entryLog")
 
+const entryLog = document.querySelector(".entryLog")
 const deleteEntry = {
   registerDeleteListener () {
     entryLog.addEventListener("click", event => {
@@ -57,3 +60,46 @@ const deleteEntry = {
 
 deleteEntry.registerDeleteListener()
 API.getJournalEntries().then(render.renderJournalEntries)
+
+// Adds event listener to Edit Entry button
+entryLog.addEventListener("click", event => {
+  if (event.target.id.startsWith("editEntry--")) {
+    const entryIdToEdit = event.target.id.split("--")[1]
+    updateFormFields(entryIdToEdit)
+    console.log("ENTRY ID: ", entryIdToEdit)
+  }
+})
+
+const updateFormFields = entryId => {
+
+  let hiddenEntryId = document.querySelector("#entryId")
+  let dateInput = document.querySelector("#journalDate")
+  let conceptsInput = document.querySelector("#conceptsCovered")
+  let entryInput = document.querySelector("#journalEntry")
+  let moodInput = document.querySelector("#mood")
+
+  fetch(`http://localhost:3000/entries/${entryId}`)
+    .then(response => response.json())
+    .then(entry => {
+      hiddenEntryId.value = entry.id
+      dateInput.value = entry.date
+      conceptsInput.value = entry.concepts
+      entryInput.value = entry.entry
+      moodInput.value = entry.mood
+    })
+}
+
+const editEntry = (id) => {
+  const updatedObject = {
+    date: document.querySelector("#journalDate").value,
+    concepts: document.querySelector("#conceptsCovered").value,
+    entry: document.querySelector("#journalEntry").value,
+    mood: document.querySelector("#mood").value
+  };
+
+  API.editJournalEntry(id, updatedObject).then(() => {
+    document.querySelector("#entryId").value = ""
+    
+    API.getJournalEntries().then(render.renderJournalEntries)
+  })
+}
