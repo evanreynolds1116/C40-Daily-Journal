@@ -103,3 +103,30 @@ const editEntry = (id) => {
     API.getJournalEntries().then(render.renderJournalEntries)
   })
 }
+
+let searchInput = document.querySelector("#search")
+searchInput.addEventListener("keypress", event => {
+  let searchTerm = event.target.value.toLowerCase();
+  if (event.keyCode == 13 && searchTerm != "") {
+    entryLog.innerHTML = ""
+    API.getJournalEntries().then( eachEntry => {
+      let allEntries = [];
+      eachEntry.forEach( entry => {
+        for (const value of Object.values(entry)) {
+          if (value.toString().toLowerCase().includes(searchTerm)) {
+            allEntries.push(entry)
+            break;
+          }
+        }
+      })
+      console.log(allEntries)
+      render.renderJournalEntries(allEntries)
+    })
+  }
+})
+
+// if (event.keyCode == 13 && searchTerm != "")
+// API.getJournalEntries().then( eachEntry => {
+//   eachEntry.forEach( entry => {
+//     for (const value of Object.values(entry)) {
+      

@@ -1,36 +1,20 @@
 body {
   background-color: rgba(45, 48, 63);
   padding: 5px;
-}
-
-fieldset {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(141, 141, 141);
-    border: 1px solid black;
-    /* border-radius: 8px; */
-    width: 50%;
-    flex-basis: 150px;
-    padding: 5px;
-
-}
-
-.entryLog {
   color: white;
 }
 
-h2 {
-  color: white;
-  text-shadow: -1px 0 rgb(241, 92, 36), 0 1px rgb(241, 92, 36), 1px 0 rgb(241, 92, 36), 0 -1px rgb(241, 92, 36);
-  font-size: 2em;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 h1 {
-  font-size: 4.5em;
-  color: white;
+  font-size: 8em;
   text-shadow: -1px 0 rgb(241, 92, 36), 0 1px rgb(241, 92, 36), 1px 0 rgb(241, 92, 36), 0 -1px rgb(241, 92, 36);
-  display: inline;
-  
+  margin-left: 20px;
 }
 
 img {
@@ -60,9 +44,32 @@ img:hover {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/* Journal Entry Form */
+.entry {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(241, 92, 36); 
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+/* Record journal entry button */
 #submit {
   margin: 5px;
+  background-color: rgb(241, 92, 36);
+  color: rgba(45, 48, 63);
+  border: 2px solid white;
+  font-weight: bolder;
+  font-size: 1em;
+  text-transform: uppercase;
 }
+
+h2 {
+  text-shadow: -1px 0 rgb(241, 92, 36), 0 1px rgb(241, 92, 36), 1px 0 rgb(241, 92, 36), 0 -1px rgb(241, 92, 36);
+  font-size: 2em;
+}
+
+
 
 fieldset {
   font-weight: bold;
@@ -75,10 +82,27 @@ fieldset {
   margin: 5px;
 }
 
-.filter {
+/* .filter {
   margin: 5px;
-}
+  display: inline;
+} */
 
 fieldset > label {
   font-size: 1em;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.filter {
+  flex-basis: 40%;
+  border-color: rgb(241, 92, 36);
+}
+
+.search {
+  flex-basis: 40%;
+  border-color: rgb(241, 92, 36);
 }

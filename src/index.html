@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles/journal.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3139/s300/nss-logo-compact.png" alt="NSS">
-    <h1>Daily Journal</h1>
-  </header>
+    <link rel="stylesheet" href="styles/journal.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3139/s300/nss-logo-compact.png"
+        alt="NSS"
+      />
+      <h1>Daily Journal</h1>
+    </header>
     <form action="">
-        <fieldset>
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">
-        </fieldset>
-        <fieldset>
-            <label for="conceptsCovered">Concepts covered</label>
-            <input type="text" name="conceptsCovered" id="conceptsCovered">
-        </fieldset>
-        <fieldset>
-            <label for="journalEntry">Journal entry</label>
-            <input type="text" name="jounralEntry" id="journalEntry">
-        </fieldset>
-        <fieldset>
-            <label for="mood">Mood for the day</label>
-            <select name="mood" id="mood">
-              <option value="happy">Happy</option>
-              <option value="sad">Sad</option>
-              <option value="yeet">Yeet</option>
-              <option value="mush">Mush Brain</option>
-            </select>
-        </fieldset>
-        <input type="hidden" id="entryId" value="" />
-        <input type="submit" id="submit" value="Record journal entry" />
-        <fieldset class="filter">
-          <p>Filter Journal Entries by Mood</p>
-
-          <div>
-            <input type="radio" id="happy" name="radio-button" value="Happy">
-            <label for="happy">Happy</label>
-
-            <input type="radio" id="sad" name="radio-button" value="sad">
-            <label for="sad">Sad</label>
-
-            <input type="radio" id="yeet" name="radio-button" value="yeet">
-            <label for="yeet">Yeet</label>
-            
-            <input type="radio" id="mush-brain" name="radio-button" value="mush">
-            <label for="mush">Mush Brain</label>
-          </div>
-        </fieldset>
+      <fieldset class="entry">
+        <label for="journalDate">Date of entry</label>
+        <input type="date" name="journalDate" id="journalDate" />
+      </fieldset>
+      <fieldset class="entry">
+        <label for="conceptsCovered">Concepts covered</label>
+        <input type="text" name="conceptsCovered" id="conceptsCovered" />
+      </fieldset>
+      <fieldset class="entry">
+        <label for="journalEntry">Journal entry</label>
+        <input type="text" name="jounralEntry" id="journalEntry" />
+      </fieldset>
+      <fieldset class="entry">
+        <label for="mood">Mood for the day</label>
+        <select name="mood" id="mood">
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="yeet">Yeet</option>
+          <option value="mush">Mush Brain</option>
+        </select>
+      </fieldset>
+      <input type="hidden" id="entryId" value="" />
+      <input type="submit" id="submit" value="Record journal entry" />
+      <hr />
     </form>
-    <article class="entryLog">
-      
-    </article>
-    
+    <div class="flex-container">
+      <fieldset class="filter">
+        <legend>Filter Entries by Mood</legend>
+        <input type="radio" id="happy" name="radio-button" value="Happy" />
+        <label for="happy">Happy</label>
+        <input type="radio" id="sad" name="radio-button" value="sad" />
+        <label for="sad">Sad</label>
+        <input type="radio" id="yeet" name="radio-button" value="yeet" />
+        <label for="yeet">Yeet</label>
+        <input type="radio" id="mush-brain" name="radio-button" value="mush" />
+        <label for="mush">Mush Brain</label>
+      </fieldset>
+      <fieldset class="search">
+        <legend>Search journal entries</legend>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Enter search term"
+        />
+      </fieldset>
+    </div>
+    <article class="entryLog"></article>
+
     <script type="module" src="scripts/journal.js"></script>
-</body>
+  </body>
 </html>
